@@ -1,0 +1,17 @@
+body { 
+    background-color: rgb(170, 67, 67);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+.screenClear {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
