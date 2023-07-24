@@ -1,17 +1,80 @@
-body { 
-    background-color: rgb(170, 67, 67);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+body , .container {
+    background-color: whitesmoke;
     display: flex;
-    justify-content: center;
     align-items: center;
-   
+    justify-content: center;
+    flex-direction: column;
 }
 
+button {
+    width: 50px;
+    height: 50px;
+    border-radius:4px;
+    border:none;
+}
+.container {
+    background-color: gainsboro;
+    margin-top: 200px;
+    width: 300px;
+    height: 380px;
+    border-radius:8px;
+}
 
-
-.screenClear {
+.calc, .minus {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    gap: 3px;
 }
 
+.minus {
+    flex-direction: column;   
+}
+
+.number {
+    margin-bottom: 3px;      
+}
+
+.screen {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    border: 1px solid grey;
+    border-radius: 4px;
+    justify-content: right;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.toprow {
+    margin-bottom: 3px;
+}
+#sum {
+    height: 103px;
+}
+
+#equal {
+    width: 103px;
+    background-color: brown;
+    color: white;
+    font-size: large;
+}
+
+
+#clear {
+    background-color: rgb(195, 93, 93);
+    color: white;
+    font-weight: bolder;
+    font-size: larger;    
+}
+
+#space {
+    background-color:rgb(84, 84, 84);
+    color: white;
+    font-size: larger;
+}
+
+#divide, #multiply, #subtract, #sum, #dot{
+    background-color: rgb(237, 195, 132);
+    font-weight: bolder;
+    font-size: larger;
+}
