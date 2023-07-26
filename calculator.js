@@ -41,211 +41,120 @@ space = document.getElementById("space")
 //array of numbers and operator to use in screen display 
 const operators = ["+","-","x","/"]
 
-
-
 //equal button and finishing operation 
 equal.addEventListener("click", function(){
     equal.dataset.clicked = "true";
 })
 
-//functions that will trigger on event listener (numbers)
-const f0 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 0
-    console.log(screen_display)
-    return screen_display
-}
-const f1 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 1
-    console.log(screen_display)
-    return screen_display
-}
-const f2 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 2
-    console.log(screen_display)
-    return screen_display
-}
-const f3 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 3
-    console.log(screen_display)
-    return screen_display
-}
-const f4 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 4
-    console.log(screen_display)
-    return screen_display
-}
-const f5 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 5
-    console.log(screen_display)
-    return screen_display
-}
-const f6 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 6
-    console.log(screen_display)
-    return screen_display
-}
-const f7 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 7
-    console.log(screen_display)
-    return screen_display
-}
-const f8 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 8
-    console.log(screen_display)
-    return screen_display
-}
-const f9 = function () {
-    let screen_display = " "
-    screen_display = screen_display + 9
-    console.log(screen_display)
-    return screen_display
-}
-
-//functions that will trigger on event listener (operators)
-const opsum = function() {
-    let screen_display = " "
-    screen_display = screen_display + "+"
-    console.log(screen_display)
-    return screen_display
-}
-
-const opsub = function() {
-    let screen_display = " "
-    screen_display = screen_display + "-"
-    console.log(screen_display)
-    return screen_display
-}
-
-const opmult = function() {
-    let screen_display = " "
-    screen_display = screen_display + "x"
-    console.log(screen_display)
-    return screen_display
-}
-
-const opdiv = function() {
-    let screen_display = " "
-    screen_display = screen_display + "/"
-    console.log(screen_display)
-    return screen_display
-}
-
-const opdot = function () {
-    let screen_display = " "
-    screen_display = screen_display + "."
-    console.log(screen_display)
-    return screen_display
-}
-
-
-
 
 
 const operate = function () {
-    let op1 = ""
-    let op2 = ""
-    let op3 = ""
-    let op4 = ""
-    let op5 = ""
     let internal = ""
+
     //event listeners for numbers
     num0.addEventListener("click", function (){
-        internal = internal + f0()
+        internal = internal + 0
+        console.log(0)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num1.addEventListener("click", function (){
-        internal = internal + f1()
+        internal = internal + 1
+        console.log(1)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num2.addEventListener("click", function (){
-        internal = internal + f2()
+        internal = internal + 2
+        console.log(2)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num3.addEventListener("click", function (){
-        internal = internal + f3()
+        internal = internal + 3
+        console.log(3)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num4.addEventListener("click", function (){
-        internal = internal + f4()
+        internal = internal + 4
+        console.log(4)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num5.addEventListener("click", function (){
-        internal = internal + f5()
+        internal = internal + 5
+        console.log(5)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num6.addEventListener("click", function (){
-        internal = internal + f6()
+        internal = internal + 6
+        console.log(6)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num7.addEventListener("click", function (){
-        internal = internal + f7()
+        internal = internal + 7
+        console.log(7)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num8.addEventListener("click", function (){
-        internal = internal + f8()
+        internal = internal + 8
+        console.log(8)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     num9.addEventListener("click", function (){
-        internal = internal + f9()
+        internal = internal + 9
+        console.log(9)
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     //event listener for dot 
     dot.addEventListener("click", function (){
-        internal = internal + opdot()
+        internal = internal + "."
+        console.log(".")
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     //event listeners for operators
     sum.addEventListener("click", function (){
-        internal = internal + opsum()
+        internal = internal + "+"
+        console.log("+")
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     subtract.addEventListener("click", function (){
-        internal = internal + opsub()
+        internal = internal + "-"
+        console.log("-")
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     multiply.addEventListener("click", function (){
-        internal = internal + opmult()
+        internal = internal + "x"
+        console.log("x")
         document.getElementById("screen").innerHTML = internal
     }
     , true)
 
     divide.addEventListener("click", function (){
-        internal = internal + opdiv()
+        internal = internal + "/"
+        console.log("/")
         document.getElementById("screen").innerHTML = internal
     }
     , true)
@@ -263,30 +172,63 @@ const operate = function () {
         document.getElementById("screen").innerHTML = internal
     }
     
-    ,true)s
+    ,true)
 
     //event listeners for equal signs, starts operation 
     equal.addEventListener("click", function(){
-        let calc = internal
-        console.log(calc)
-        internal = ""
         
-        
+        let position = []
+    
+        for( let i = 0; i < internal.length; i++){
+            if(internal[i]=== operators[0])position.push(i)
+        }
+        console.log(position)
 
+        
+        add_ind = internal.indexOf("+")
+        sub_ind = internal.indexOf("-")
+        mult_ind = internal.indexOf("x")
+        div_ind = internal.indexOf("/")
+        if(add_ind != -1){
+            let op1 = parseFloat(internal.slice(0,add_ind))
+            let op2 = parseFloat(internal.slice(add_ind + 1,))
+            const result = add(op1,op2)
+            console.log(result)
+        }
+        
+        else if(sub_ind != -1){
+            let op1 = parseFloat(internal.slice(0,sub_ind))
+            let op2 = parseFloat(internal.slice(sub_ind + 1,))
+            const result = sub(op1,op2)
+            console.log(result)
+        }
+
+        else if(mult_ind != -1){
+            let op1 = parseFloat(internal.slice(0,mult_ind))
+            let op2 = parseFloat(internal.slice(mult_ind + 1,))
+            const result = mult(op1,op2)
+            console.log(result)
+        }
+
+        else if(div_ind != -1){
+            let op1 = parseFloat(internal.slice(0,div_ind))
+            let op2 = parseFloat(internal.slice(div_ind + 1,))
+            const result = div(op1,op2)
+            console.log(result)
+        }
+        
+        // console.log(sub_ind)
+        // console.log(mult_ind)
+        // console.log(div_ind)
+        // console.log(Math.min(add_ind,sub_ind,mult_ind,div_ind))
+        
+        
+        // let calc = internal
+        // console.log(calc)
+        
     })
 
     
 }
     
-
-
-
-
-
-
-
-
 operate ()
-
-
-
