@@ -1,3 +1,10 @@
+
+
+
+//operators array 
+operators = ["+","-","x","/"]
+
+
 // basic functions 
 const add =function (a,b) {
     return a + b;
@@ -45,8 +52,7 @@ space = document.getElementById("space")
 function operate(){
 
     let internal = ""
-    let operator = ""
-    
+        
     //event listeners for numbers
 
     num0.addEventListener("click", function(){
@@ -105,6 +111,19 @@ function operate(){
         document.getElementById("screen").innerHTML = internal
     })
 
+    
+
+    //clear button and backspace button
+    clear.addEventListener("click", function(){
+        internal = ""
+        document.getElementById("screen").innerHTML = internal
+    })
+
+    space.addEventListener("click", function(){
+        internal = internal.slice(0,-1)
+        document.getElementById("screen").innerHTML = internal
+    })
+
     //event listener for operators
 
     sum.addEventListener("click", function(){
@@ -127,34 +146,50 @@ function operate(){
         document.getElementById("screen").innerHTML = internal
     })
 
-    //clear button and backspace button
-    clear.addEventListener("click", function(){
-        internal = ""
-        document.getElementById("screen").innerHTML = internal
-    })
-
-    space.addEventListener("click", function(){
-        internal = internal.slice(0,-1)
-        document.getElementById("screen").innerHTML = internal
-    })
 
     equal.addEventListener("click", function(){
-        let op1 = ""
-        let op2 =""
-        console.log(internal)
-        let add_ind = internal.toString().indexOf("+")
-        let sub_ind = internal.toString().indexOf("-")
-        let mult_ind = internal.toString().indexOf("x")
-        let div_ind = internal.toString().indexOf("/")
 
-        console.log(add_ind)
-        console.log(sub_ind)
-        console.log(mult_ind)
-        console.log(div_ind)
+        let add_ind = internal.indexOf("+")
+        let sub_ind = internal.indexOf("-")
+        let mult_ind = internal.indexOf("x")
+        let div_ind = internal.indexOf("/")
+      
+        
+        if(add_ind != -1){
+            let op1 = parseFloat(internal.slice(0,add_ind))
+            let op2 = parseFloat(internal.slice(add_ind + 1,))
+            internal = add(op1,op2) 
+        }
+        
+        else if(sub_ind != -1){
+            let op1 = parseFloat(internal.slice(0,sub_ind))
+            let op2 = parseFloat(internal.slice(sub_ind + 1,))
+            internal = sub(op1,op2)
+        }
+
+        else if(mult_ind != -1){
+            let op1 = parseFloat(internal.slice(0,mult_ind))
+            let op2 = parseFloat(internal.slice(mult_ind + 1,))
+            internal = mult(op1,op2)
+        }
+
+        else if(div_ind != -1){
+            let op1 = parseFloat(internal.slice(0,div_ind))
+            let op2 = parseFloat(internal.slice(div_ind + 1,))
+            internal = div(op1,op2)
+        }
+		
+        document.getElementById("screen").innerHTML = internal
+
+
     })
+
+   
     
 
 
 }
 
 operate()
+
+

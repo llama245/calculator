@@ -30,7 +30,8 @@ button {
 }
 
 .number {
-    margin-bottom: 3px;      
+    margin-bottom: 3px;  
+
 }
 
 .screen {
@@ -53,7 +54,7 @@ button {
 }
 
 #equal {
-    width: 103px;
+    width: 100px;
     background-color: brown;
     color: white;
     font-size: large;
@@ -77,4 +78,8 @@ button {
     background-color: rgb(237, 195, 132);
     font-weight: bolder;
     font-size: larger;
+}
+
+#dot {
+    margin-left:4px;
 }
